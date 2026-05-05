@@ -1,138 +1,158 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <style>
-      *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        
-      }
-      body{
-        background:white;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-      }
-      .chat-container{
-        background:#efeae2;
-        height:400px;
-        width:300px;
-        border-radius:10px;
-        overflow:hidden;
-        display:flex;
-        flex-direction:column;
-        box-shadow:0 10px 25px rgba(0,0,0,0.2);
-      }
-      .header{
-        background:green;
-        width:300px;
-        height:50px;
-        color:white;
-        display:flex;
-        align-items:center;
-        padding:10px;
-        justify-content:space-between;
-      }
-      .profile{
-        height:35px;
-        width:35px;
-        border-radius:50%;
-        background:grey;
-        margin-left:2px;
-      }
-      .name{
-        display:flex;
-        align-item:left;
-         white-space: nowrap;
-      }
-      .left-header{
-        margin-left:3px;
-        display:flex;
-        align-items:center;
-        gap:10px;
-      }
-      .right-icons{
-        font-size:15px;
-        display:flex;
-        gap:10px;
-      }
-      .chat-box{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      padding:10px;
-      overflow-y:auto;
-        
-      }
-      .message{
-        padding:10px 20px;
-        border-radius:10px;
-        max-width:70%;
-      }
-      .message-left{
-        background:white;
-        align-self:flex-start;
-      }
-      .message-right{
-        background:green;
-        align-self:flex-end;
-      }
-      .input-bar{
-        background:white;
-        display:flex;
-        align-items:center;
-        
-        padding:8px 12px;
-      
-        
-      }
-      input{
-        border:none;
-        outline:none;
-        padding:8px 10px;
-        flex:1;
-      }
-      
-      .text{
-        display:flex;
-        margin-left:8px;
-      }
-      .icons{
-        font-size:18px;
-        gap:10px;
-      }
-    </style>
-  </head>
-  <body>
-      <div class="chat-container">
-        <div class="header">
-          <div class="left-header">
-            <div class="profile"></div>
-            <div class="name">virat kohli</div>
-          </div>
-          <div class="right-icons">
-             <span>📹</span>
-             <span>📞</span>
-            <span>⋮</span>
-          </div>
-        </div>
-        <div class="chat-box">
-          <div class="message message-left">hi</div>
-          <div class="message message-right">hello</div>
-          <div class="message message-left">how are you</div>
-          <div class="message message-right">i am good</div>
-          <div class="message message-left">how your carrer going</div>
-          <div class="message message-right">good </div>
-        </div>
-        <div class="input-bar">
-          <div class="left-icons">😊</div>
-          <input type="text" placeholder="enter message">
-          <div class="icon">📎</div>
-          <div class="icon">🎤</div>
-        </div>
-     
-      </div>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>WhatsApp UI</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#e5ddd5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.chat-container{
+  width:360px;
+  height:640px;
+  background:#efeae2;
+  display:flex;
+  flex-direction:column;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* HEADER */
+.header{
+  background:#075e54;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+}
+
+.left-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.profile{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:#ccc;
+  background-image:url('https://i.imgur.com/1X4R1bK.png');
+  background-size:cover;
+  background-position:center;
+}
+
+.name{
+  font-size:16px;
+  font-weight:bold;
+}
+
+.right-icons{
+  display:flex;
+  gap:15px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* CHAT AREA */
+.chat-box{
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+  background-image:url('https://i.imgur.com/5XkRZbR.png');
+  background-size:cover;
+}
+
+.message{
+  max-width:70%;
+  padding:8px 10px;
+  margin:5px 0;
+  border-radius:8px;
+  font-size:14px;
+}
+
+.left{
+  background:#fff;
+  align-self:flex-start;
+}
+
+.right{
+  background:#dcf8c6;
+  align-self:flex-end;
+}
+
+/* INPUT AREA */
+.input-area{
+  display:flex;
+  align-items:center;
+  padding:8px;
+  background:#f0f0f0;
+  gap:5px;
+}
+
+.input-area input{
+  flex:1;
+  padding:8px;
+  border:none;
+  border-radius:20px;
+  outline:none;
+}
+
+.icon{
+  font-size:20px;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="left-header">
+      <div class="profile"></div>
+      <div class="name">Virat Kohli</div>
+    </div>
+    <div class="right-icons">
+      <span>📹</span>
+      <span>📞</span>
+      <span>⋮</span>
+    </div>
+  </div>
+
+  <!-- CHAT BOX -->
+  <div class="chat-box">
+    <div class="message left">Hey Virat!</div>
+    <div class="message left">Big fan!</div>
+    <div class="message right">Hello 👋</div>
+    <div class="message right">Thank you!</div>
+  </div>
+
+  <!-- INPUT -->
+  <div class="input-area">
+    <span class="icon">😊</span>
+    <span class="icon">📎</span>
+    <input type="text" placeholder="Type a message" />
+    <span class="icon">🎤</span>
+  </div>
+
+</div>
+
+</body>
 </html>
